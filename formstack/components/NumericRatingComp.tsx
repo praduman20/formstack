@@ -11,7 +11,10 @@ function NumericRatingComp() {
       </Label>
       <div className="flex flex-row my-2">
         {numericRating.map((el) => (
-          <Button className="bg-white text-black border-zinc-400 border hover:bg-[#00a6ca] rounded-none">
+          <Button
+            key={el}
+            className="bg-white text-black border-zinc-400 border hover:bg-[#00a6ca] rounded-none"
+          >
             {el}
           </Button>
         ))}
