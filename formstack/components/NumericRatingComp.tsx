@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Edit, Trash } from "lucide-react";
@@ -8,6 +8,7 @@ interface NumericRatingCompProps {
 }
 
 function NumericRatingComp({ onDelete }: NumericRatingCompProps) {
+  const [selectedButton, setSelectedButton] = useState<number>();
   const numericRating = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
     <div
@@ -21,7 +22,13 @@ function NumericRatingComp({ onDelete }: NumericRatingCompProps) {
         {numericRating.map((el) => (
           <Button
             key={el}
-            className="bg-white text-black border-zinc-400 border hover:bg-[#00a6ca] rounded-none"
+            className={`bg-white text-black border-zinc-400 border hover:bg-[#00a6ca] rounded-none ${
+              selectedButton === el ? "bg-[#00a6ca]" : ""
+            }`}
+            onClick={(e) => {
+              e.preventDefault();
+              setSelectedButton(el);
+            }}
           >
             {el}
           </Button>

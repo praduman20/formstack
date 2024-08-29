@@ -84,7 +84,7 @@ function Page() {
         </div>
       </div>
       {/* Right section */}
-      <div className="w-[25vw] max-h-[72vh] flex flex-col justify-start p-4 overflow-y-auto">
+      <div className="w-[25vw] max-h-[74vh] flex flex-col justify-start p-4 overflow-y-auto">
         <div>
           <h1 className="text-xl font-semibold text-[#00a6ca] p-2">
             Add fields
